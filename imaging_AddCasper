@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Create Casper 
+# author: matt.lee@fox.com
+
+dscl . -create /Users/casper
+dscl . -create /Users/casper UserShell /bin/bash
+dscl . -create /Users/casper RealName "casper"
+dscl . -create /Users/casper UniqueID 101
+dscl . -create /Users/casper PrimaryGroupID 80
+dscl . -create /Users/casper NFSHomeDirectory /private/var/casper
+dscl . -passwd /Users/casper th3friendlygh0st!!!
+dscl . -append /Groups/admin GroupMembership casper
+
+exit 0		## Success
+exit 1		## Failure
